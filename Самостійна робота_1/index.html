@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Самостійна_1</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: navy;
+        }
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        a:link { color: green; }
+        a:visited { color: purple; }
+        a:hover { color: red; }
+        a:active { color: yellow; }
+        tr:nth-child(even) {
+            background-color: #D6EEEE;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Самостійна_1</h1>
+<p>Ця сторінка демонструє ключові концепції з уроків W3Schools.</p>
+<hr>
+
+<h2>Навігація по сторінці</h2>
+<ul>
+    <li><a href="#tables">Перейти до таблиць</a></li>
+    <li><a href="#forms">Перейти до форм</a></li>
+</ul>
+<hr>
+
+<h2> Основи, елементи та базові теги</h2>
+<p>HTML (HyperText Markup Language) — це мова для структурування веб-сторінок за допомогою <b>елементів</b> (тегів).</p>
+<h1>Заголовок 1-го рівня</h1>
+<h6>Заголовок 6-го рівня</h6>
+
+<h2> Атрибути</h2>
+<p title="Це спливаюча підказка!">Атрибути надають додаткову інформацію про елементи. Наведіть на мене, щоб побачити атрибут <b>title</b>.</p>
+
+<h2> Параграфи</h2>
+<p>Це перший параграф. Тег &lt;p&gt; створює блок тексту.</p>
+<p>Це другий параграф.<br>За допомогою тега &lt;br&gt; можна зробити<br> перенесення рядка.</p>
+
+<h2> Посилання</h2>
+<a href="https://w3schoolsua.github.io/" target="_blank">Це посилання на W3Schools UA</a> (відкриється в новій вкладці).
+
+<h2> Зображення</h2>
+<img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Італійські будиночки Труллі" width="300" height="200">
+
+<h2> Карта зображень (Image Map)</h2>
+<p>Натисніть на ноутбук або телефон:</p>
+<img src="https://www.w3schools.com/html/workplace.jpg" alt="Робоче місце" usemap="#workmap" width="400" height="379">
+<map name="workmap">
+    <area shape="rect" coords="34,44,270,350" alt="Ноутбук" href="https://w3schoolsua.github.io/html/html_images_imagemap.html#laptop">
+    <area shape="rect" coords="290,172,333,250" alt="Телефон" href="https://w3schoolsua.github.io/html/html_images_imagemap.html#phone">
+</map>
+
+<h2> Тег &lt;picture&gt;</h2>
+<p>Браузер вибере відповідне зображення залежно від ширини екрана.</p>
+<picture>
+    <source srcset="https://www.w3schools.com/html/img_avatar.png" media="(min-width: 650px)">
+    <source srcset="https://www.w3schools.com/html/pic_trulli.jpg" media="(min-width: 465px)">
+    <img src="https://www.w3schools.com/html/img_girl.jpg" alt="Flowers" style="width:auto;">
+</picture>
+
+<h2 id="tables"> Комплексна таблиця</h2>
+<p>Ця таблиця демонструє межі, розміри, заголовки, об'єднання комірок та стилізацію.</p>
+<table style="width:100%; text-align: center;">
+    <colgroup>
+        <col span="2" style="background-color: #f2f2f2;">
+        <col style="background-color: #e6f7ff;">
+    </colgroup>
+    <tr>
+        <th>Ім'я</th>
+        <th>Посада</th>
+        <th>Телефон</th>
+    </tr>
+    <tr>
+        <td>Іван Іванов</td>
+        <td colspan="2">Менеджер, Відділ А</td>
+    </tr>
+    <tr>
+        <td rowspan="2">Петро Петров</td>
+        <td>Розробник</td>
+        <td>+123456789</td>
+    </tr>
+    <tr>
+        <td>Тестувальник</td>
+        <td>+987654321</td>
+    </tr>
+</table>
+
+<h2> Різні типи списків</h2>
+<h3>Маркований список (Unordered List)</h3>
+<ul style="list-style-type:disc;">
+    <li>Кава</li>
+    <li>Чай</li>
+</ul>
+
+<h3>Нумерований список (Ordered List)</h3>
+<ol type="1">
+    <li>Крок перший</li>
+    <li>Крок другий</li>
+</ol>
+
+<h3>Список визначень (Description List)</h3>
+<dl>
+    <dt>HTML</dt>
+    <dd>- Мова розмітки для веб-сторінок</dd>
+    <dt>CSS</dt>
+    <dd>- Мова для стилізації веб-сторінок</dd>
+</dl>
+
+<h2 id="forms"> Форма зворотного зв'язку</h2>
+<p>Ця форма демонструє різні елементи введення та їх атрибути.</p>
+<form action="/submit_page.php" target="_blank" method="post">
+    <label for="fname">Ім'я:</label><br>
+    <input type="text" id="fname" name="fname" value="Іван" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" placeholder="example@mail.com" disabled><br><br>
+
+    <p>Оберіть вашу улюблену мову:</p>
+    <input type="radio" id="html" name="fav_language" value="HTML">
+    <label for="html">HTML</label><br>
+    <input type="radio" id="css" name="fav_language" value="CSS">
+    <label for="css">CSS</label><br><br>
+
+    <p>Що ви використовуєте?</p>
+    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" checked>
+    <label for="vehicle1"> Велосипед</label><br><br>
+
+    <label for="cars">Оберіть автомобіль:</label><br>
+    <select id="cars" name="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab" selected>Saab</option>
+    </select><br><br>
+
+    <label for="comment">Коментар:</label><br>
+    <textarea name="comment" rows="5" cols="30"></textarea><br><br>
+
+    <input type="submit" value="Відправити">
+    <input type="reset" value="Скинути">
+</form>
+
+</body>
+</html>
