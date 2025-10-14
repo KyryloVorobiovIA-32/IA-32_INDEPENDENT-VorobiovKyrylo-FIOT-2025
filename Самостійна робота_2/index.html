@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>CSS Конспект</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         * {
             box-sizing: border-box;
@@ -43,20 +47,10 @@
             margin: 25px;
         }
 
-        a:link {
-            color: green;
-            text-decoration: none;
-        }
-        a:visited {
-            color: purple;
-        }
-        a:hover {
-            color: red;
-            text-decoration: underline;
-        }
-        a:active {
-            color: orange;
-        }
+        a:link { color: green; text-decoration: none; }
+        a:visited { color: purple; }
+        a:hover { color: red; text-decoration: underline; }
+        a:active { color: orange; }
 
         ul.styled-list {
             list-style-type: square;
@@ -74,23 +68,10 @@
             text-align: left;
         }
 
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        tr:hover {
-            background-color: #ddd;
-        }
-
-        th {
-            background-color: DodgerBlue;
-            color: white;
-            vertical-align: middle;
-        }
-
-        .responsive-table {
-            overflow-x: auto;
-        }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+        tr:hover { background-color: #ddd; }
+        th { background-color: DodgerBlue; color: white; vertical-align: middle; }
+        .responsive-table { overflow-x: auto; }
 
         .rounded-corners {
             border-radius: 25px;
@@ -116,7 +97,6 @@
             display: inline-block;
             border-bottom: 1px dotted black;
         }
-
         .tooltip .tooltiptext {
             visibility: hidden;
             width: 120px;
@@ -128,10 +108,7 @@
             position: absolute;
             z-index: 1;
         }
-
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-        }
+        .tooltip:hover .tooltiptext { visibility: visible; }
 
         .custom-button {
             background-color: #4CAF50;
@@ -148,10 +125,7 @@
             transition-duration: 0.4s;
             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         }
-
-        .custom-button:hover {
-            background-color: #45a049;
-        }
+        .custom-button:hover { background-color: #45a049; }
 
         .pagination a {
             color: black;
@@ -159,7 +133,6 @@
             padding: 8px 16px;
             text-decoration: none;
         }
-
         .pagination a.active {
             background-color: #4CAF50;
             color: white;
@@ -171,11 +144,7 @@
             column-rule: 1px solid lightblue;
         }
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
+        .dropdown { position: relative; display: inline-block; }
         .dropdown-content {
             display: none;
             position: absolute;
@@ -184,19 +153,60 @@
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
         }
-
         .dropdown-content a {
             color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
+        .dropdown-content a:hover { background-color: #f1f1f1; }
+        .dropdown:hover .dropdown-content { display: block; }
 
-        .dropdown-content a:hover {background-color: #f1f1f1}
-
-        .dropdown:hover .dropdown-content {
-            display: block;
+        /* --- СТИЛІ ДЛЯ ОСТАННІХ ЗАВДАНЬ --- */
+        .outline-example {
+            border: 2px solid black;
+            padding: 10px;
+            outline: 5px solid red;
+            outline-offset: 10px;
+            margin: 30px;
         }
+
+        .text-formatting-example {
+            text-align: center;
+            text-decoration: underline wavy red;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.8;
+            text-shadow: 1px 1px 2px blue;
+        }
+
+        .font-header {
+            font-family: 'Lora', serif;
+        }
+
+        .font-main-text {
+            font: italic bold 18px 'Roboto', sans-serif;
+        }
+
+        .layout-container {
+            border: 1px solid grey;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .display-example span { margin: 5px; padding: 5px; background: lightblue; }
+        .display-example .block { display: block; }
+        .display-example .hidden { visibility: hidden; }
+
+        .width-example { width: 80%; max-width: 500px; background: lightgreen; padding: 10px; }
+
+        .position-container { position: relative; height: 100px; border: 2px solid #333; }
+        .box1 { position: absolute; width: 80px; height: 80px; background: red; top: 10px; left: 10px; z-index: 1; }
+        .box2 { position: absolute; width: 80px; height: 80px; background: blue; top: 20px; left: 20px; z-index: 2; }
+
+        .overflow-example { width: 200px; height: 80px; background: #eee; overflow: auto; border: 1px solid black; }
+
+        .float-left { width: 100px; height: 50px; float: left; background: gold; margin-right: 10px; }
+        .clear-fix::after { content: ""; clear: both; display: table; }
 
     </style>
 </head>
@@ -216,21 +226,9 @@
 <h2>Стилізована та адаптивна таблиця</h2>
 <div class="responsive-table">
     <table>
-        <tr>
-            <th>Ім'я</th>
-            <th>Прізвище</th>
-            <th>Вік</th>
-        </tr>
-        <tr>
-            <td>Іван</td>
-            <td>Петренко</td>
-            <td>25</td>
-        </tr>
-        <tr>
-            <td>Анна</td>
-            <td>Сидоренко</td>
-            <td>32</td>
-        </tr>
+        <tr><th>Ім'я</th><th>Прізвище</th><th>Вік</th></tr>
+        <tr><td>Іван</td><td>Петренко</td><td>25</td></tr>
+        <tr><td>Анна</td><td>Сидоренко</td><td>32</td></tr>
     </table>
 </div>
 <hr>
@@ -238,42 +236,68 @@
 <h2>Просунуті ефекти CSS</h2>
 <p><b>Заокруглені кути та тінь:</b></p>
 <div class="rounded-corners"></div>
-
 <p><b>Анімація:</b></p>
 <div class="animated-box"></div>
-
 <p><b>Підказка при наведенні:</b></p>
 <div class="tooltip">Наведіть на мене
     <span class="tooltiptext">Текст підказки</span>
 </div>
-
 <p><b>Кнопка з ефектами:</b></p>
 <button class="custom-button">Натисни мене</button>
-
 <p><b>Пагінація:</b></p>
 <div class="pagination">
-    <a href="#">&laquo;</a>
-    <a href="#">1</a>
-    <a class="active" href="#">2</a>
-    <a href="#">3</a>
-    <a href="#">&raquo;</a>
+    <a href="#">&laquo;</a><a href="#">1</a><a class="active" href="#">2</a><a href="#">3</a><a href="#">&raquo;</a>
 </div>
 <br><br>
-
 <p><b>Випадаючий список:</b></p>
 <div class="dropdown">
     <span>Наведіть на мене</span>
     <div class="dropdown-content">
-        <a href="#">Посилання 1</a>
-        <a href="#">Посилання 2</a>
+        <a href="#">Посилання 1</a><a href="#">Посилання 2</a>
     </div>
 </div>
 <br><br>
-
 <h2>Багатоколонковий текст</h2>
 <div class="multi-column">
-    Історія чашки налічує тисячоліття, починаючись від простих дерев'яних та глиняних ємностей. У кожній культурі чашка набувала своїх унікальних рис: від витончених китайських порцелянових піал, що ідеально підходили для чайних церемоній, до масивних керамічних кухлів, популярних у середньовічній Європі для пива та елю. Сучасний світ пропонує безліч варіацій: скляні чашки для лате, термостійкі для подорожей та дизайнерські вироби, що є справжніми витворами мистецтва.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </div>
+<hr>
+
+<h2>Контур, Текст та Шрифти</h2>
+<p><b>Приклад контуру:</b></p>
+<div class="outline-example">Цей блок має рамку та зовнішній контур з відступом.</div>
+<p class="text-formatting-example">Приклад форматування тексту.</p>
+<div>
+    <h3 class="font-header">Це заголовок шрифтом 'Lora' (Google Font).</h3>
+    <p class="font-main-text">А це основний текст шрифтом 'Roboto' з резервним sans-serif.</p>
+</div>
+<hr>
+
+<h2>Макетування (Layout)</h2>
+<div class="layout-container display-example">
+    <b>Display/Visibility:</b>
+    <span>Це inline елемент.</span>
+    <span>А це <span class="hidden">прихований</span> inline.</span>
+    <span class="block">А це вже display: block.</span>
+</div>
+<div class="layout-container width-example">
+    <b>Width/Max-width:</b> Цей блок має ширину 80%, але не більше 500px.
+</div>
+<div class="layout-container">
+    <b>Position/Z-index:</b> Синій квадрат (z-index: 2) знаходиться над червоним (z-index: 1).
+    <div class="position-container">
+        <div class="box1"></div><div class="box2"></div>
+    </div>
+</div>
+<div class="layout-container overflow-example">
+    <b>Overflow:</b> Тут дуже багато тексту, який не вміщується у видиму область блоку, тому з'являється прокрутка. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+<div class="layout-container clear-fix">
+    <b>Float/Clear:</b>
+    <div class="float-left">Float Left</div>
+    <p>Цей текст обтікає блок зліва. Коли елементів багато, вони продовжуватимуть обтікати плаваючий блок.</p>
+</div>
+<p>А цей текст починається після очищення (clear).</p>
 
 </body>
 </html>
