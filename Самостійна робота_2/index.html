@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Конспект</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        @keyframes example-animation {
+            from {background-color: red;}
+            to {background-color: yellow;}
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: #f0f8ff;
+            background-image: url('https://www.w3schools.com/css/img_tree.png');
+            background-repeat: no-repeat;
+            background-position: right top;
+        }
+
+        h1, h2 {
+            text-shadow: 2px 2px 5px grey;
+        }
+
+        #main-header {
+            color: hsl(240, 100%, 25%);
+        }
+
+        p {
+            color: rgb(50, 50, 50);
+        }
+
+        .box-model-example {
+            background-color: rgba(255, 255, 0, 0.5);
+            width: 300px;
+            height: 150px;
+            padding: 20px;
+            border: 5px dotted red;
+            margin: 25px;
+        }
+
+        a:link {
+            color: green;
+            text-decoration: none;
+        }
+        a:visited {
+            color: purple;
+        }
+        a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+        a:active {
+            color: orange;
+        }
+
+        ul.styled-list {
+            list-style-type: square;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        th {
+            background-color: DodgerBlue;
+            color: white;
+            vertical-align: middle;
+        }
+
+        .responsive-table {
+            overflow-x: auto;
+        }
+
+        .rounded-corners {
+            border-radius: 25px;
+            background: Tomato;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+            margin-bottom: 20px;
+            box-shadow: 10px 10px 8px grey;
+        }
+
+        .animated-box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: example-animation;
+            animation-duration: 4s;
+            margin-bottom: 20px;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        .custom-button {
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        .custom-button:hover {
+            background-color: #45a049;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .multi-column {
+            column-count: 3;
+            column-gap: 40px;
+            column-rule: 1px solid lightblue;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1 id="main-header">Застосування CSS Селекторів та Кольорів</h1>
+<p>Цей параграф стилізований за допомогою селектора тегу.</p>
+<div class="box-model-example">Цей блок демонструє блочну модель: margin, border, padding, height та width.</div>
+<a href="#">Це стилізоване посилання. Наведіть на нього.</a>
+<ul class="styled-list">
+    <li>Перший елемент списку</li>
+    <li>Другий елемент списку</li>
+</ul>
+<p><i class="fas fa-cloud"></i> Це іконка Font Awesome.</p>
+<hr>
+
+<h2>Стилізована та адаптивна таблиця</h2>
+<div class="responsive-table">
+    <table>
+        <tr>
+            <th>Ім'я</th>
+            <th>Прізвище</th>
+            <th>Вік</th>
+        </tr>
+        <tr>
+            <td>Іван</td>
+            <td>Петренко</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Анна</td>
+            <td>Сидоренко</td>
+            <td>32</td>
+        </tr>
+    </table>
+</div>
+<hr>
+
+<h2>Просунуті ефекти CSS</h2>
+<p><b>Заокруглені кути та тінь:</b></p>
+<div class="rounded-corners"></div>
+
+<p><b>Анімація:</b></p>
+<div class="animated-box"></div>
+
+<p><b>Підказка при наведенні:</b></p>
+<div class="tooltip">Наведіть на мене
+    <span class="tooltiptext">Текст підказки</span>
+</div>
+
+<p><b>Кнопка з ефектами:</b></p>
+<button class="custom-button">Натисни мене</button>
+
+<p><b>Пагінація:</b></p>
+<div class="pagination">
+    <a href="#">&laquo;</a>
+    <a href="#">1</a>
+    <a class="active" href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">&raquo;</a>
+</div>
+<br><br>
+
+<p><b>Випадаючий список:</b></p>
+<div class="dropdown">
+    <span>Наведіть на мене</span>
+    <div class="dropdown-content">
+        <a href="#">Посилання 1</a>
+        <a href="#">Посилання 2</a>
+    </div>
+</div>
+<br><br>
+
+<h2>Багатоколонковий текст</h2>
+<div class="multi-column">
+    Історія чашки налічує тисячоліття, починаючись від простих дерев'яних та глиняних ємностей. У кожній культурі чашка набувала своїх унікальних рис: від витончених китайських порцелянових піал, що ідеально підходили для чайних церемоній, до масивних керамічних кухлів, популярних у середньовічній Європі для пива та елю. Сучасний світ пропонує безліч варіацій: скляні чашки для лате, термостійкі для подорожей та дизайнерські вироби, що є справжніми витворами мистецтва.
+</div>
+
+</body>
+</html>
