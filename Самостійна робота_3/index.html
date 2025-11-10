@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>CSS Конспект</title>
+    <title>CSS Конспект (Самостійна 3)</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -162,7 +162,6 @@
         .dropdown-content a:hover { background-color: #f1f1f1; }
         .dropdown:hover .dropdown-content { display: block; }
 
-        /* --- СТИЛІ ДЛЯ ОСТАННІХ ЗАВДАНЬ --- */
         .outline-example {
             border: 2px solid black;
             padding: 10px;
@@ -180,33 +179,82 @@
             text-shadow: 1px 1px 2px blue;
         }
 
-        .font-header {
-            font-family: 'Lora', serif;
-        }
+        .font-header { font-family: 'Lora', serif; }
+        .font-main-text { font: italic bold 18px 'Roboto', sans-serif; }
 
-        .font-main-text {
-            font: italic bold 18px 'Roboto', sans-serif;
-        }
-
-        .layout-container {
-            border: 1px solid grey;
-            padding: 10px;
-            margin-top: 20px;
-        }
+        .layout-container { border: 1px solid grey; padding: 10px; margin-top: 20px; }
         .display-example span { margin: 5px; padding: 5px; background: lightblue; }
         .display-example .block { display: block; }
         .display-example .hidden { visibility: hidden; }
-
         .width-example { width: 80%; max-width: 500px; background: lightgreen; padding: 10px; }
-
         .position-container { position: relative; height: 100px; border: 2px solid #333; }
         .box1 { position: absolute; width: 80px; height: 80px; background: red; top: 10px; left: 10px; z-index: 1; }
         .box2 { position: absolute; width: 80px; height: 80px; background: blue; top: 20px; left: 20px; z-index: 2; }
-
         .overflow-example { width: 200px; height: 80px; background: #eee; overflow: auto; border: 1px solid black; }
-
         .float-left { width: 100px; height: 50px; float: left; background: gold; margin-right: 10px; }
         .clear-fix::after { content: ""; clear: both; display: table; }
+
+        .transform-2d {
+            width: 150px; height: 50px; background-color: skyblue;
+            transform: rotate(20deg) translateX(20px);
+            margin: 30px;
+        }
+        .transform-3d {
+            width: 150px; height: 50px; background-color: sandybrown;
+            transform: rotateY(45deg);
+            margin: 30px;
+        }
+
+        .styled-image {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .reflection-image {
+            -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(0,0,0,0.4));
+        }
+        .object-fit-container {
+            width: 150px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        .object-fit-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .mask-image {
+            width: 150px;
+            height: 150px;
+            mask-image: url(https://www.w3schools.com/css/star.svg);
+            mask-mode: alpha;
+            background-color: blue;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: DodgerBlue;
+            padding: 10px;
+        }
+        .flex-item {
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 20px;
+            width: 100px;
+        }
+
+        @media screen and (max-width: 600px) {
+            body {
+                background-color: lightblue;
+            }
+            .multi-column {
+                column-count: 1;
+            }
+        }
 
     </style>
 </head>
@@ -259,7 +307,7 @@
 <br><br>
 <h2>Багатоколонковий текст</h2>
 <div class="multi-column">
-    Історія чашки налічує тисячоліття, починаючись від простих дерев'яних та глиняних ємностей. У кожній культурі чашка набувала своїх унікальних рис: від витончених китайських порцелянових піал, що ідеально підходили для чайних церемоній, до масивних керамічних кухлів, популярних у середньовічній Європі для пива та елю. Сучасний світ пропонує безліч варіацій: скляні чашки для лате, термостійкі для подорожей та дизайнерські вироби, що є справжніми витворами мистецтва.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </div>
 <hr>
 
@@ -298,6 +346,35 @@
     <p>Цей текст обтікає блок зліва. Коли елементів багато, вони продовжуватимуть обтікати плаваючий блок.</p>
 </div>
 <p>А цей текст починається після очищення (clear).</p>
+<hr>
 
+<h2>Самостійна 3: Нові теми</h2>
+
+<h3>2D та 3D Трансформації</h3>
+<div class="transform-2d">2D Трансформація</div>
+<div class="transform-3d">3D Трансформація</div>
+
+<h3>Стилізація зображень</h3>
+<p><b>border-radius:</b></p>
+<img class="styled-image" src="https://www.w3schools.com/css/img_lights.jpg" alt="Lights">
+<p><b>Reflection:</b></p>
+<img class="reflection-image" src="https://www.w3schools.com/css/img_lights.jpg" width="150px" alt="Reflection">
+<p><b>Object-fit (cover):</b></p>
+<div class="object-fit-container">
+    <img class="object-fit-image" src="https://www.w3schools.com/css/img_lights.jpg" alt="Fit">
+</div>
+<p><b>Masking:</b></p>
+<div class="mask-image"></div>
+<br>
+
+<h3>Flexbox</h3>
+<div class="flex-container">
+    <div class="flex-item">Елемент 1</div>
+    <div class="flex-item">Елемент 2</div>
+    <div class="flex-item">Елемент 3</div>
+</div>
+
+<h3>Медіа-запит</h3>
+<p>Зменште ширину вікна (менше 600px), щоб побачити, як фон стане блакитним.</p>
 </body>
 </html>
